@@ -21,5 +21,6 @@ void	ft_rev_int_tab(int *tab, int size)
 		tmp = tab[cnt];
 		tab[cnt] = tab[size - 1 - cnt];
 		tab[size - 1 - cnt] = tmp;
+		cnt++;
 	}
 }
