@@ -6,14 +6,50 @@
 /*   By: minkyuki <minkyuki@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/01 17:36:02 by minkyuki          #+#    #+#             */
-/*   Updated: 2022/10/01 17:40:16 by minkyuki         ###   ########.fr       */
+/*   Updated: 2022/10/02 16:21:36 by namhooki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./rush03.c"
+#include <unistd.h>
 
-int	main(void)
+void	rush(int a, int b);
+int		my_atoi(char *str);
+
+int	main(int argc, char *argv[])
 {
-	rush(5, 5);
+	int		a;
+	int		b;
+
+	if (argc == 3)
+	{
+		a = my_atoi(argv[1]);
+		b = my_atoi(argv[2]);
+		rush(a, b);
+	}
+	else
+		write(1, "Enter 2 integer digits ex)1 3\n", 30);
 	return (0);
+}
+
+int	my_atoi(char *str)
+{
+	int		num;
+	int		cnt;
+	int		cnt_zero;
+
+	num = 0;
+	cnt = 0;
+	cnt_zero = 0;
+	while (str[cnt_zero])
+	{
+		if (str[cnt_zero] < '0' || str[cnt_zero] > '9')
+			return (0);
+		cnt_zero++;
+	}
+	while (str[cnt] && (str[cnt] >= '0' && str[cnt] <= '9'))
+	{	
+		num = num * 10 + (str[cnt] - '0');
+		cnt++;
+	}
+	return (num);
 }

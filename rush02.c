@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   test.c                                             :+:      :+:    :+:   */
+/*   rush02.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: namhooki <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/01 14:51:15 by namhooki          #+#    #+#             */
-/*   Updated: 2022/10/01 18:03:28 by namhooki         ###   ########.fr       */
+/*   Created: 2022/10/02 15:58:04 by namhooki          #+#    #+#             */
+/*   Updated: 2022/10/02 16:08:11 by namhooki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 void	func1(int a);
 void	func2(int a);
+void	func3(int a);
 void	ft_putchar(char c);
 void	illegal_argument_error(void);
 
@@ -26,7 +27,7 @@ void	rush(int a, int b)
 		else if (b == 2)
 		{
 			func1(a);
-			func1(a);
+			func3(a);
 		}
 		else
 		{
@@ -36,7 +37,7 @@ void	rush(int a, int b)
 				func2(a);
 				b--;
 			}
-			func1(a);
+			func3(a);
 		}
 	}
 	else
@@ -50,7 +51,7 @@ void	func1(int a)
 	else if (a == 2)
 	{
 		ft_putchar('A');
-		ft_putchar('C');
+		ft_putchar('A');
 	}
 	else
 	{
@@ -60,7 +61,7 @@ void	func1(int a)
 			ft_putchar('B');
 			a--;
 		}
-		ft_putchar('C');
+		ft_putchar('A');
 	}
 	ft_putchar('\n');
 }
@@ -83,6 +84,28 @@ void	func2(int a)
 			a--;
 		}
 		ft_putchar('B');
+	}
+	ft_putchar('\n');
+}
+
+void	func3(int a)
+{
+	if (a < 2)
+		ft_putchar('C');
+	else if (a == 2)
+	{
+		ft_putchar('C');
+		ft_putchar('C');
+	}
+	else
+	{
+		ft_putchar('C');
+		while (a - 2 > 0)
+		{
+			ft_putchar('B');
+			a--;
+		}
+		ft_putchar('C');
 	}
 	ft_putchar('\n');
 }
