@@ -1,20 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   test.c                                             :+:      :+:    :+:   */
+/*   rush04.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: namhooki <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: minkyuki <minkyuki@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/01 14:51:15 by namhooki          #+#    #+#             */
-/*   Updated: 2022/10/02 20:56:02 by minkyuki         ###   ########.fr       */
+/*   Created: 2022/10/02 15:29:13 by minkyuki          #+#    #+#             */
+/*   Updated: 2022/10/02 20:55:42 by minkyuki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+void	ft_putchar(char c);
+void	illegal_argument_error(void);
 void	func1(int a);
 void	func2(int a);
 void	func3(int a);
-void	ft_putchar(char c);
-void	illegal_argument_error(void);
 
 void	rush(int a, int b)
 {
@@ -45,21 +45,21 @@ void	rush(int a, int b)
 void	func1(int a)
 {
 	if (a < 2)
-		ft_putchar('/');
+		ft_putchar('A');
 	else if (a == 2)
 	{
-		ft_putchar('/');
-		ft_putchar('\\');
+		ft_putchar('A');
+		ft_putchar('C');
 	}
 	else
 	{
-		ft_putchar('/');
+		ft_putchar('A');
 		while (a - 2 > 0)
 		{
-			ft_putchar('*');
+			ft_putchar('B');
 			a--;
 		}
-		ft_putchar('\\');
+		ft_putchar('C');
 	}
 	ft_putchar('\n');
 }
@@ -67,21 +67,21 @@ void	func1(int a)
 void	func2(int a)
 {
 	if (a < 2)
-		ft_putchar('*');
+		ft_putchar('B');
 	else if (a == 2)
 	{
-		ft_putchar('*');
-		ft_putchar('*');
+		ft_putchar('B');
+		ft_putchar('B');
 	}
 	else
 	{
-		ft_putchar('*');
+		ft_putchar('B');
 		while (a - 2 > 0)
 		{
 			ft_putchar(' ');
 			a--;
 		}
-		ft_putchar('*');
+		ft_putchar('B');
 	}
 	ft_putchar('\n');
 }
@@ -89,21 +89,21 @@ void	func2(int a)
 void	func3(int a)
 {
 	if (a < 2)
-		ft_putchar('\\');
+		ft_putchar('C');
 	else if (a == 2)
 	{
-		ft_putchar('\\');
-		ft_putchar('/');
+		ft_putchar('C');
+		ft_putchar('A');
 	}
 	else
 	{
-		ft_putchar('\\');
+		ft_putchar('C');
 		while (a - 2 > 0)
 		{
-			ft_putchar('*');
+			ft_putchar('B');
 			a--;
 		}
-		ft_putchar('/');
+		ft_putchar('A');
 	}
 	ft_putchar('\n');
 }

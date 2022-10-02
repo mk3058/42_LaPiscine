@@ -6,14 +6,13 @@
 /*   By: minkyuki <minkyuki@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/01 17:36:02 by minkyuki          #+#    #+#             */
-/*   Updated: 2022/10/02 16:21:36 by namhooki         ###   ########.fr       */
+/*   Updated: 2022/10/02 20:58:04 by minkyuki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-
 void	rush(int a, int b);
 int		my_atoi(char *str);
+void	input_error(void);
 
 int	main(int argc, char *argv[])
 {
@@ -27,7 +26,7 @@ int	main(int argc, char *argv[])
 		rush(a, b);
 	}
 	else
-		write(1, "Enter 2 integer digits ex)1 3\n", 30);
+		input_error();
 	return (0);
 }
 

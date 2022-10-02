@@ -6,11 +6,9 @@
 /*   By: namhooki <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/02 15:58:04 by namhooki          #+#    #+#             */
-/*   Updated: 2022/10/02 16:08:11 by namhooki         ###   ########.fr       */
+/*   Updated: 2022/10/02 20:56:05 by minkyuki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include <unistd.h>
 
 void	func1(int a);
 void	func2(int a);
