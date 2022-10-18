@@ -6,21 +6,21 @@
 /*   By: minkyuki <minkyuki@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/02 19:11:28 by minkyuki          #+#    #+#             */
-/*   Updated: 2022/10/19 08:44:34 by minkyuki         ###   ########.fr       */
+/*   Updated: 2022/10/19 08:53:40 by minkyuki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void 	print_hex_addr(long long addr);
+void	print_hex_addr(long long addr);
 void	print_hex_str(char *str);
-void	convert_to_hex(long long  nbr, char *res, int index);
+void	convert_to_hex(long long nbr, char *res, int index);
 void	ft_putstr(char *str);
 
 void	*ft_print_memory(void *addr, unsigned int size)
 {
-	int i;
-	int loop;
+	int	i;
+	int	loop;
 
 	i = 0;
 	loop = size / 16 + (size % 16 > 0);
@@ -35,9 +35,9 @@ void	*ft_print_memory(void *addr, unsigned int size)
 	return (addr);
 }
 
-void print_hex_addr(long long addr)
+void	print_hex_addr(long long addr)
 {
-	char addr_hex[17];
+	char	addr_hex[17];
 
 	addr_hex[16] = 0;
 	convert_to_hex(addr, addr_hex, 15);
@@ -45,16 +45,16 @@ void print_hex_addr(long long addr)
 	write(1, ":", 1);
 }
 
-void print_hex_str(char *str)
+void	print_hex_str(char *str)
 {
-	int index;
-	char hex_str[3];
+	int		index;
+	char	hex_str[3];
 
 	index = 0;
 	hex_str[2] = 0;
 	while (index < 16 && str[index])
 	{	
-		if(index % 2 == 0)
+		if (index % 2 == 0)
 			write(1, " ", 1);
 		convert_to_hex(str[index], hex_str, 1);
 		ft_putstr(hex_str);
@@ -62,7 +62,7 @@ void print_hex_str(char *str)
 	}
 	while (index < 16)
 	{
-		if(index % 2 == 0)
+		if (index % 2 == 0)
 			write(1, " ", 1);
 		write(1, "  ", 2);
 		index++;
@@ -70,16 +70,16 @@ void print_hex_str(char *str)
 	write(1, " ", 1);
 }
 
-void	convert_to_hex(long long  nbr, char *res, int index)
+void	convert_to_hex(long long nbr, char *res, int index)
 {
 	int	mod;
-	int i;
+	int	i;
 
 	i = 0;
 	mod = nbr % 16;
 	if (nbr > 0)
 	{
-	if(mod < 10)
+		if (mod < 10)
 			res[index] = mod + '0';
 		else
 			res[index] = ('a' + (mod - 10));
